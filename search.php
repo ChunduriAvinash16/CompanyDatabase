@@ -1,3 +1,11 @@
+<?php
+$con = new mysqli("localhost", "root", "", "Companies");
+if(isset($_GET['let']))
+$let = $_GET['let'];
+else
+$let='';
+$query1 = "SELECT * FROM cdb WHERE Name_of_the_Company LIKE '$let%'";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,17 +54,16 @@
         console.log(i);
     }
     document.getElementById("Sort").innerHTML=b;
-
-    var details="";
 </script>
 <?php
 $con = new mysqli("localhost", "root", "", "Companies");
-$city=$_POST['city'];
+/*$city=$_POST['city'];
 $type=$_POST['type'];
 $name=$_POST['c_name'];
-$query = "SELECT * FROM `cdb` WHERE `Name_of_the_Company` LIKE '%$name%' AND `Type_of_Organization` LIKE '%$type%' AND `Company_Address` LIKE '%$city%' ORDER BY `Name_of_the_Company`";
-//echo $query;
-if ($result = $con->query($query)) {
+$query2 = "SELECT * FROM `cdb` WHERE `Name_of_the_Company` LIKE '%$name%' AND `Type_of_Organization` LIKE '%$type%' AND `Company_Address` LIKE '%$city%' ORDER BY `Name_of_the_Company`";
+//echo $query;*/
+//$query= $query1." INTERSECT ".$query2;
+if ($result = $con->query($query1)) {
     while ($row = $result->fetch_assoc()) {
        
         echo '<div class="my-4 bg-gray-200 rounded ml-20 mr-20 p-2"><table>'.
