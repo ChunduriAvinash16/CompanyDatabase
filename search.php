@@ -1,5 +1,5 @@
 <?php
-$con = new mysqli("localhost", "root", "", "Companies");
+$con = new mysqli("localhost", "root", "", "company");
 if(isset($_GET['let']))
 $let = $_GET['let'];
 else
@@ -22,7 +22,7 @@ $query1 = "SELECT * FROM cdb WHERE Name_of_the_Company LIKE '$let%'";
                 <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2 " placeholder="Company Name" name="c_name">
                 <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2"  placeholder="Select an Industry" name="type">
                     <!--<?php
-                        $con = new mysqli("localhost", "root", "", "Companies");
+                        $con = new mysqli("localhost", "root", "", "company");
                         $query = "SELECT DISTINCT Type_of_Organization FROM `cdb`";
                         if ($result = $con->query($query)) {
                             while ($row = $result->fetch_assoc()) {
@@ -38,7 +38,7 @@ $query1 = "SELECT * FROM cdb WHERE Name_of_the_Company LIKE '$let%'";
         </form>
     </div>
     <div class="border rounded my-10 mx-10">
-            <div id="Sort">A</div>
+            <div class="flex" id="Sort">A</div>
             <hr class="bg-black"/>
             <div id="Companies"></div>
     </div>
@@ -56,7 +56,7 @@ $query1 = "SELECT * FROM cdb WHERE Name_of_the_Company LIKE '$let%'";
     document.getElementById("Sort").innerHTML=b;
 </script>
 <?php
-$con = new mysqli("localhost", "root", "", "Companies");
+$con = new mysqli("localhost", "root", "", "company");
 /*$city=$_POST['city'];
 $type=$_POST['type'];
 $name=$_POST['c_name'];
@@ -67,12 +67,12 @@ if ($result = $con->query($query1)) {
     while ($row = $result->fetch_assoc()) {
        
         echo '<div class="my-4 bg-gray-200 rounded ml-20 mr-20 p-2"><table>'.
-        '<tr><td>Industry:'.$row["Name_of_the_Company"].'</td></tr>' .
-        '<tr><td>Company Type:'.$row["Type_of_Organization"].'</td></tr> '.
+        '<tr><td>Industry:</td><td >'.$row["Name_of_the_Company"].'</td></tr>' .
+        '<tr><td>Company Type:</td><td>'.$row["Type_of_Organization"].'</td></tr> '.
         '<tr><td>Level of Office:</td></tr> '.
-        '<tr><td>Location   : '.$row["Origin"].'</td></tr>'.
-        '<tr><td>Phone No   :'.$row["Contact_Person_Phone_No"].'</td></tr> '.
-        '<tr><td>Website    : '.$row["Website"].'</td></tr>'.
+        '<tr><td>Location   : </td><td>'.$row["Origin"].'</td></tr>'.
+        '<tr><td>Phone No   :</td><td>'.$row["Contact_Person_Phone_No"].'</td></tr> '.
+        '<tr><td>Website    : </td><td>'.$row["Website"].'</td></tr>'.
         '</table></div>';
     }
     $result->free();

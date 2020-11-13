@@ -14,7 +14,7 @@
                 <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2 " placeholder="Company Name" name="c_name">
                 <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2"  placeholder="Select an Industry" name="type">
                     <!--<?php
-                        $con = new mysqli("localhost", "root", "", "Companies");
+                        $con = new mysqli("localhost", "root", "", "company");
                         $query = "SELECT DISTINCT Type_of_Organization FROM `cdb`";
                         if ($result = $con->query($query)) {
                             while ($row = $result->fetch_assoc()) {
@@ -50,7 +50,7 @@
     var details="";
 </script>
 <?php
-$con = new mysqli("localhost", "root", "", "Companies");
+$con = new mysqli("localhost", "root", "", "company");
 $city=$_POST['city'];
 $type=$_POST['type'];
 $name=$_POST['c_name'];
