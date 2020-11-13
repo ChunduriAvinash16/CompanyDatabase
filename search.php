@@ -1,5 +1,5 @@
 <?php
-$con = new mysqli("localhost", "root", "", "company");
+$con = new mysqli("localhost", "root", "", "Companies");
 if(isset($_GET['let']))
 $let = $_GET['let'];
 else
@@ -22,7 +22,7 @@ $query1 = "SELECT * FROM cdb WHERE Name_of_the_Company LIKE '$let%'";
                 <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2 " placeholder="Company Name" name="c_name">
                 <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2"  placeholder="Select an Industry" name="type">
                     <!--<?php
-                        $con = new mysqli("localhost", "root", "", "company");
+                        $con = new mysqli("localhost", "root", "", "Companies");
                         $query = "SELECT DISTINCT Type_of_Organization FROM `cdb`";
                         if ($result = $con->query($query)) {
                             while ($row = $result->fetch_assoc()) {
@@ -38,25 +38,11 @@ $query1 = "SELECT * FROM cdb WHERE Name_of_the_Company LIKE '$let%'";
         </form>
     </div>
     <div class="border rounded my-10 mx-10">
-            <div class="flex" id="Sort">A</div>
+            <div id="Sort">A</div>
             <hr class="bg-black"/>
-            <div id="Companies"></div>
-    </div>
-</body>
-<script>
-    var i;
-    var b="<span class='ml-2 text-white p-2 my-2'>Sort By Company Name ></span>";
-    var url="";
-    for(i=0;i<26;i++){
-        url=String.fromCharCode(65+i);
-        console.log(url);
-        b+="<button class='ml-2 text-white p-2 hover:bg-red-400 my-2'><a href='search.php?let="+String.fromCharCode(65+i)+"'>"+String.fromCharCode(65+i)+"</a></button>";
-        console.log(i);
-    }
-    document.getElementById("Sort").innerHTML=b;
-</script>
-<?php
-$con = new mysqli("localhost", "root", "", "company");
+            <div id="Companies">
+                <?php
+$con = new mysqli("localhost", "root", "", "Companies");
 /*$city=$_POST['city'];
 $type=$_POST['type'];
 $name=$_POST['c_name'];
@@ -66,16 +52,31 @@ $query2 = "SELECT * FROM `cdb` WHERE `Name_of_the_Company` LIKE '%$name%' AND `T
 if ($result = $con->query($query1)) {
     while ($row = $result->fetch_assoc()) {
        
-        echo '<div class="my-4 bg-gray-200 rounded ml-20 mr-20 p-2"><table>'.
-        '<tr><td>Industry:</td><td >'.$row["Name_of_the_Company"].'</td></tr>' .
-        '<tr><td>Company Type:</td><td>'.$row["Type_of_Organization"].'</td></tr> '.
-        '<tr><td>Level of Office:</td></tr> '.
-        '<tr><td>Location   : </td><td>'.$row["Origin"].'</td></tr>'.
-        '<tr><td>Phone No   :</td><td>'.$row["Contact_Person_Phone_No"].'</td></tr> '.
-        '<tr><td>Website    : </td><td>'.$row["Website"].'</td></tr>'.
+        echo '<div class="my-4 bg-gray-200 rounded ml-20 mr-20 p-2"><table width="100%">'.
+        '<tr><td width="14%" style="vertical-align: text-top">Industry</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Name_of_the_Company"].'</td></tr>' .
+        '<tr><td width="14%" style="vertical-align: text-top">Company Type</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Type_of_Organization"].'</td></tr> '.
+        '<tr><td width="14%" style="vertical-align: text-top">Level of Office</td><td width="2%" style="vertical-align: text-top">:</td><td></td></tr> '.
+        '<tr><td width="14%" style="vertical-align: text-top">Location</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Origin"].'</td></tr>'.
+        '<tr><td width="14%" style="vertical-align: text-top">Phone No</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Contact_Person_Phone_No"].'</td></tr> '.
+        '<tr><td width="14%" style="vertical-align: text-top">Website</td><td width="2%" style="vertical-align: text-top">:</td><td><a class="text-blue-500 hover:text-blue-800" href="'.$row["Website"].'">'.$row["Website"].'</a></td></tr>'.
         '</table></div>';
     }
     $result->free();
 }
 ?>
+            </div>
+    </div>
+</body>
+<script>
+    var i;
+    var b="<span class='ml-2 text-white p-2 my-2'>Sort By Company Name ></span>";
+    var url="";
+    for(i=0;i<26;i++){
+        b+="<a href='search.php?let="+String.fromCharCode(65+i)+"'><button class='ml-2 text-white p-2 hover:bg-red-400 my-2'>"+String.fromCharCode(65+i)+"</button></a>";
+        console.log(i);
+    }
+    document.getElementById("Sort").innerHTML=b;
+
+    var details="";
+</script>
 </html>
