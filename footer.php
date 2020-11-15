@@ -10,7 +10,7 @@
 			<td align="center"><img src="images/Avinash.jpg" style="border: 3 solid black;" width="90px" height="90px" alt="Photo"/><br>
     		<h4 class="numbers"><h3 style="font-size: 15px; font-weight: bolder; color: white;">Avinash</h3></td>
 
-    		<td align="center"><img src="images/Varsha.jpg" style="border: 3 solid black;" width="90px" height="90px" alt="Photo"/><br>
+    		<td align="center"><img src="images/varsha.jpg" style="border: 3 solid black;" width="90px" height="90px" alt="Photo"/><br>
     		<h4 class="numbers"><h3 style="font-size: 15px; font-weight: bolder; color: white;">Varsha</h3></td>
 		</tr>
 	</table>
