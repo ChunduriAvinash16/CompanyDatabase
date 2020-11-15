@@ -3,6 +3,7 @@
     <div>
         <form class="h-50 border rounded my-10 mx-10" method="GET" action="index.php">
             <div class="flex flex-wrap justify-center my-10">
+            <button class="rounded border p-2 ml-4 sm:my-2 bg-yellow-500"> <a href="insert.php">Insert a New Company</a></button>
                 <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2 " placeholder="Company Name" name="c_name">
                 <select class="h-12 border rounded p-1 ml-4 sm:my-2 text-gray-500"  placeholder="Select an Industry" name="type">
                     <option value=''>Select a Industry</option>
@@ -69,7 +70,8 @@
                         '<tr><td width="13%" style="vertical-align: text-top">Location</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Origin"].'</td></tr>'.
                         '<tr><td width="13%" style="vertical-align: text-top">Phone No</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Contact_Person_Phone_No"].'</td></tr> '.
                         '<tr><td width="13%" style="vertical-align: text-top">Website</td><td width="2%" style="vertical-align: text-top">:</td><td><a class="text-blue-500 hover:text-blue-800" href="'.$row["Website"].'">'.$row["Website"].'</a></td></tr>'.
-                        "<td><button><a href=\"deleterecord.php?id=".$row['Name_of_the_Company']."\">Delete</a></button></td>".
+                        "<td><button><a href=\"deleterecord.php?id=".$row['CNo']."\">Delete</a></button></td>".
+                        "<td><button><a href=\"edit.php?id=".$row['CNo']."\">Edit</a></button></td>".
                         '</table></div>';  
                         $row_cnt++;  
                     }
@@ -91,7 +93,8 @@
                 '<tr><td width="13%" style="vertical-align: text-top">Location</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Origin"].'</td></tr>'.
                 '<tr><td width="13%" style="vertical-align: text-top">Phone No</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Contact_Person_Phone_No"].'</td></tr> '.
                 '<tr><td width="13%" style="vertical-align: text-top">Website</td><td width="2%" style="vertical-align: text-top">:</td><td><a class="text-blue-500 hover:text-blue-800" href="'.$row["Website"].'">'.$row["Website"].'</a></td></tr>'.
-                "<td><button><a href=\"deleterecord.php?id=".$row['Name_of_the_Company']."\">Delete</a></button></td>".
+                "<td><button><a href=\"deleterecord.php?id=".$row['CNo']."\">Delete</a></button></td>".
+                "<td><button><a href=\"edit.php?id=".$row['CNo']."\">Edit</a></button></td>".
                 '</table></div>';
                 $row_cnt++;  
             }

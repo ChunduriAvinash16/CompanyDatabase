@@ -1,9 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Add Record Form</title>
-</head>
+<?php require 'header.php'?>
 <body>
 <form method="post">
     <p>
@@ -13,10 +8,6 @@
     <p>
         <label for="Origin">Origin:</label>
         <input type="text" name="Origin" id="Origin">
-    </p>
-    <p>
-        <label for="emailAddress">Email Address:</label>
-        <input type="text" name="email" id="emailAddress">
     </p>
     <p>
         <label for="TypeOrgan">Type of Organisation:</label>
@@ -83,7 +74,6 @@ if($link === false){
 // Escape user inputs for security
 $NameCompany = mysqli_real_escape_string($link, $_REQUEST['NameCompany']);
 $Origin = mysqli_real_escape_string($link, $_REQUEST['Origin']);
-$emailAddress = mysqli_real_escape_string($link, $_REQUEST['emailAddress']);
 $TypeOrgan = mysqli_real_escape_string($link, $_REQUEST['TypeOrgan']);
 $Employeestrength = mysqli_real_escape_string($link, $_REQUEST['Employeestrength']);
 $Website = mysqli_real_escape_string($link, $_REQUEST['Website']);
@@ -110,3 +100,4 @@ if(mysqli_query($link, $sql)){
 // Close connection
 mysqli_close($link);
 ?>
+<?php require 'footer.php'?>
