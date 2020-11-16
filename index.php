@@ -70,8 +70,8 @@
                         '<tr><td width="13%" style="vertical-align: text-top">Location</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Origin"].'</td></tr>'.
                         '<tr><td width="13%" style="vertical-align: text-top">Phone No</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Contact_Person_Phone_No"].'</td></tr> '.
                         '<tr><td width="13%" style="vertical-align: text-top">Website</td><td width="2%" style="vertical-align: text-top">:</td><td><a class="text-blue-500 hover:text-blue-800" href="'.$row["Website"].'">'.$row["Website"].'</a></td></tr>'.
-                        "<td><button><a href=\"deleterecord.php?id=".$row['CNo']."\">Delete</a></button></td>".
-                        "<td><button><a href=\"edit.php?id=".$row['CNo']."\">Edit</a></button></td>".
+                        "<td><button class='rounded border p-2 ml-4 sm:my-2 bg-red-500'><a href=\"deleterecord.php?id=".$row['CNo']."\">Delete</a></button></td>".
+                        "<td><button class='rounded border p-2 ml-4 sm:my-2 bg-blue-500'><a href=\"edit.php?id=".$row['CNo']."\">Edit</a></button></td>".
                         '</table></div>';  
                         $row_cnt++;  
                     }
@@ -93,9 +93,8 @@
                 '<tr><td width="13%" style="vertical-align: text-top">Location</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Origin"].'</td></tr>'.
                 '<tr><td width="13%" style="vertical-align: text-top">Phone No</td><td width="2%" style="vertical-align: text-top">:</td><td>'.$row["Contact_Person_Phone_No"].'</td></tr> '.
                 '<tr><td width="13%" style="vertical-align: text-top">Website</td><td width="2%" style="vertical-align: text-top">:</td><td><a class="text-blue-500 hover:text-blue-800" href="'.$row["Website"].'">'.$row["Website"].'</a></td></tr>'.
-                "<td><button><a href=\"deleterecord.php?id=".$row['CNo']."\">Delete</a></button></td>".
-                "<td><button><a href=\"edit.php?id=".$row['CNo']."\">Edit</a></button></td>".
-                '</table></div>';
+                "<td><button class='rounded border p-2 ml-4 sm:my-2 bg-red-500'><a href=\"deleterecord.php?id=".$row['CNo']."\">Delete</a></button></td>".
+                "<td><button class='rounded border p-2 ml-4 sm:my-2 bg-blue-500'><a href=\"edit.php?id=".$row['CNo']."\">Edit</a></button></td>".                '</table></div>';
                 $row_cnt++;  
             }
             $result->free();
