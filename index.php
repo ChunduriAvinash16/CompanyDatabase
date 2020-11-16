@@ -2,9 +2,7 @@
 <body class="bg-gradient-to-r from-teal-400 to-blue-500">
     <div>
         <form class="h-50 border rounded my-10 mx-10" method="GET" action="index.php">
-            <div class="flex flex-wrap justify-center my-10">
-            <button class="rounded border p-2 ml-4 sm:my-2 bg-yellow-500"> <a href="insert.php">Insert a New Company</a></button>
-                <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2 " placeholder="Company Name" name="c_name">
+            <div class="flex flex-wrap justify-center my-10">                <input type="text" class="h-12 border rounded p-1 ml-4 sm:my-2 " placeholder="Company Name" name="c_name">
                 <select class="h-12 border rounded p-1 ml-4 sm:my-2 text-gray-500"  placeholder="Select an Industry" name="type">
                     <option value=''>Select a Industry</option>
                     <?php
@@ -34,7 +32,17 @@
                 <button class="rounded border p-2 ml-4 sm:my-2 bg-red-400">Search</button>
             </div>
         </form>
-    </div>
+        <button class="flex flex-wrap justify-center my-10 rounded border p-2 ml-4 sm:my-2 bg-yellow-500"> <a href="insert.php">Insert a New Company</a></button>
+        <form action="bulkupload.php" method="post" enctype="multipart/form-data"style="color:#868686;">
+						<div class="form-group">
+								<label for="file">Upload an excel file<br>To download template click <a href="ITA.csv" download>HERE</a></label>
+								<input type="file" name="file" id="file">
+								<p class="help-block">Only Excel/CSV File Import.</p>
+						</div>
+						<button type="submit" class="flex flex-wrap justify-center my-10 rounded border p-2 ml-4 sm:my-2 bg-green-500" name="submit" value="submit"style="background-color:#2B3E4D; color:white;">Upload</button>
+    
+        </form>
+                </div>
     <div class="border rounded my-10 mx-10">
             <div id="Sort"></div>
             <hr class="bg-black"/>
